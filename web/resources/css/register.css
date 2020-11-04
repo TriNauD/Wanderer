@@ -1,0 +1,106 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2019-9-4, 14:59:15
+    Author     : 20636
+*/
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/pics/scenery07.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#header {
+    height: 250px;
+}
+
+#footer {
+    height: 60px;
+    clear: left;
+}
+
+#loginLeftColumn{
+    width: 600px;
+    height: 450px;
+    float: left;
+    font-family: Century Schoolbook;
+    font-size: 30px;
+}
+
+#loginRightColumn{
+    width: 320px;
+    height:450px;
+    float: left;
+}
+
+#logo{
+    position: absolute; 
+    left:55%; 
+    top: 25%; 
+}
+
+#title{
+    margin: 50px 160px 0px;
+    width: 800px;
+    height: 100px;
+    font-size: 60px;
+    font-family: Century Schoolbook;
+    color: black;
+}
+
+.loginBox {
+    height: 600px;
+    width: 550px;
+    margin: -120px 150px 0px;
+    position: absolute; 
+    background: #fff;
+    opacity: 0.8;
+}
+
+.input{
+    margin: 0px 125px 0px;
+    width: 250px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Century Schoolbook;
+    line-height: 30px;
+    color: #aaa;
+}
+
+.inputTitle{
+    font-size: 16px;
+}
+
+.errorMsg{
+    font-size: 15px;
+    color: orangered;
+}
+
+.loginButton{
+    width: 300px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    font-family: Century Schoolbook;
+    color: #fff;
+    background: #0099FF;
+    border-radius: 50px;
+}
+
+.inputBox{
+    width: 300px;
+    height: 30px;
+    color: #aaa;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    font-size: 25px;
+    font-family: Century Schoolbook;
+}

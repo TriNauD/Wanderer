@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSpotTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotId}" for="spotId" />
+                    <h:inputText id="spotId" value="#{spotController.selected.spotId}" title="#{bundle.EditSpotTitle_spotId}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotId}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotName}" for="spotName" />
+                    <h:inputText id="spotName" value="#{spotController.selected.spotName}" title="#{bundle.EditSpotTitle_spotName}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotName}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotPicMainUrl}" for="spotPicMainUrl" />
+                    <h:inputText id="spotPicMainUrl" value="#{spotController.selected.spotPicMainUrl}" title="#{bundle.EditSpotTitle_spotPicMainUrl}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotPicMainUrl}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotPicIntroUrl}" for="spotPicIntroUrl" />
+                    <h:inputText id="spotPicIntroUrl" value="#{spotController.selected.spotPicIntroUrl}" title="#{bundle.EditSpotTitle_spotPicIntroUrl}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotPicIntroUrl}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotPicOtherUrl}" for="spotPicOtherUrl" />
+                    <h:inputText id="spotPicOtherUrl" value="#{spotController.selected.spotPicOtherUrl}" title="#{bundle.EditSpotTitle_spotPicOtherUrl}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotIntroContent}" for="spotIntroContent" />
+                    <h:inputTextarea rows="4" cols="30" id="spotIntroContent" value="#{spotController.selected.spotIntroContent}" title="#{bundle.EditSpotTitle_spotIntroContent}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotIntroContent}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotIntroTitle}" for="spotIntroTitle" />
+                    <h:inputText id="spotIntroTitle" value="#{spotController.selected.spotIntroTitle}" title="#{bundle.EditSpotTitle_spotIntroTitle}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotIntroTitle}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotEmail}" for="spotEmail" />
+                    <h:inputText id="spotEmail" value="#{spotController.selected.spotEmail}" title="#{bundle.EditSpotTitle_spotEmail}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotTel}" for="spotTel" />
+                    <h:inputText id="spotTel" value="#{spotController.selected.spotTel}" title="#{bundle.EditSpotTitle_spotTel}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotOpentime}" for="spotOpentime" />
+                    <h:inputText id="spotOpentime" value="#{spotController.selected.spotOpentime}" title="#{bundle.EditSpotTitle_spotOpentime}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotTransport}" for="spotTransport" />
+                    <h:inputText id="spotTransport" value="#{spotController.selected.spotTransport}" title="#{bundle.EditSpotTitle_spotTransport}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotAddr}" for="spotAddr" />
+                    <h:inputText id="spotAddr" value="#{spotController.selected.spotAddr}" title="#{bundle.EditSpotTitle_spotAddr}" required="true" requiredMessage="#{bundle.EditSpotRequiredMessage_spotAddr}"/>
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotWebsite}" for="spotWebsite" />
+                    <h:inputText id="spotWebsite" value="#{spotController.selected.spotWebsite}" title="#{bundle.EditSpotTitle_spotWebsite}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotMapUrl}" for="spotMapUrl" />
+                    <h:inputText id="spotMapUrl" value="#{spotController.selected.spotMapUrl}" title="#{bundle.EditSpotTitle_spotMapUrl}" />
+                    <h:outputLabel value="#{bundle.EditSpotLabel_spotBelongToCity}" for="spotBelongToCity" />
+                    <h:selectOneMenu id="spotBelongToCity" value="#{spotController.selected.spotBelongToCity}" title="#{bundle.EditSpotTitle_spotBelongToCity}" >
+                        <f:selectItems value="#{cityController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{spotController.update}" value="#{bundle.EditSpotSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditSpotViewLink}"/>
+                <br />
+                <h:commandLink action="#{spotController.prepareList}" value="#{bundle.EditSpotShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditSpotIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

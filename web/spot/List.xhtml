@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSpotTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSpotEmpty}" rendered="#{spotController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{spotController.items.rowCount > 0}">
+                    <h:outputText value="#{spotController.pagination.pageFirstItem + 1}..#{spotController.pagination.pageLastItem + 1}/#{spotController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{spotController.previous}" value="#{bundle.Previous} #{spotController.pagination.pageSize}" rendered="#{spotController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{spotController.next}" value="#{bundle.Next} #{spotController.pagination.pageSize}" rendered="#{spotController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{spotController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotPicMainUrl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotPicMainUrl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotPicIntroUrl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotPicIntroUrl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotPicOtherUrl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotPicOtherUrl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotIntroContent}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotIntroContent}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotIntroTitle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotIntroTitle}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotEmail}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotEmail}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotTel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotTel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotOpentime}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotOpentime}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotTransport}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotTransport}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotAddr}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotAddr}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotWebsite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotWebsite}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotMapUrl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotMapUrl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSpotTitle_spotBelongToCity}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.spotBelongToCity}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{spotController.prepareView}" value="#{bundle.ListSpotViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{spotController.prepareEdit}" value="#{bundle.ListSpotEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{spotController.destroy}" value="#{bundle.ListSpotDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{spotController.prepareCreate}" value="#{bundle.ListSpotCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListSpotIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

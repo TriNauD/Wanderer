@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>City</title>
+        <h:outputStylesheet library="css" name="city.css"/>
+        <style>
+            /*div{position: relative;background-image: url(resources/images/pics/shanghai_pic_main.jpg);background-repeat: false;background-size: cover;}
+            h1{font-size: 220px;color: white;position: absolute;top: 500px;left: 500px;}*/
+        </style>
+    </h:head>
+    <h:body>
+        #{cityController.flushCurrentCity()}
+        <div id="top">
+            <form>
+                <input type="button" value="&lt;  Back" onclick="JavaScript:history.go(-1)" style="float: left;background: none;border: none;margin-top: 15px;margin-left: 10px;"></input>
+            </form>
+            
+            <center>
+                <img id="logo" src="resources/images/icons/wanderer_icon_black.png" width="220px" height="165px"/>
+            </center>
+        </div>
+        <h:form>
+            <div id="cityCover" style="#{cityController.coverStyleStr}">
+                <h:outputText value="#{cityController.selected.cityName}" />
+            </div>
+        </h:form>
+        <div id="blank">
+        </div>
+        <div id="left">
+        </div>
+
+        <div id="middle">
+            <div id="intro">
+                <div id="introHeading">
+                    <h:outputText value="Introduction" />
+                </div>
+                <div id="introLeft">
+                    <img id="introPic" src="#{cityController.selected.cityPicIntroUrl}" width="715px" height="357.5px"/>
+                </div>
+                <div id="introRight">
+                    <div id="introTitle">
+                        <div><h:outputText value="#{cityController.selected.cityIntroTitle}" /></div>
+                    </div>
+                    <div id="introContent">
+                        <div><h:outputText value="#{cityController.selected.cityIntroContent}"/></div>
+                    </div>
+                </div>
+            </div>
+            <div id="famousSpots">
+                <div id="famousSpotsHeading">
+                    <h:outputText value="Famous Spots" />
+                </div>
+                <div id="famousSpotsLeft">
+                    <img id="famousSpotsLeftPicture" src="#{cityController.spotPicURLList[0]}" 
+                         style="width: auto;height: auto;max-width: 100%;max-height: 100%;"/>
+                    <div id="famousSpotsLeftText">
+                        <div> 
+                            <h:form>
+                                <h:commandLink id="famousSpotsLeftText1" value="#{cityController.spotNameList[0]}" action="#{cityController.getUrlWithPara(0)}" styleClass="famousSpotText"/>
+                            </h:form>
+                        </div>
+                        <h:outputText id="famousSpotsLeftText2" value="#{cityController.selected.cityName}" />
+                    </div>
+                </div>
+                <div id="famousSpotsMiddle">
+                </div>
+                <div id="famousSpotsRight" >
+                    <img id="famousSpotsrightPicture" src="#{cityController.spotPicURLList[1]}" 
+                         style="width: auto;height: auto;max-width: 100%;max-height: 100%;"/>
+                    <div id="famousSpotsRightText">
+
+                        <div>
+                            <h:form>
+                                <h:commandLink id="famousSpotsRightText1" value="#{cityController.spotNameList[1]}" action="#{cityController.getUrlWithPara(1)}" styleClass="famousSpotText"/>
+                            </h:form>
+                        </div>
+                        <h:outputText id="famousSpotsRightText2" value="#{cityController.selected.cityName}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+        </div>
+    </h:body>
+</html>
+

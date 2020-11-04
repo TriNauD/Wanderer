@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSpotTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotId}"/>
+                    <h:outputText value="#{spotController.selected.spotId}" title="#{bundle.ViewSpotTitle_spotId}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotName}"/>
+                    <h:outputText value="#{spotController.selected.spotName}" title="#{bundle.ViewSpotTitle_spotName}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotPicMainUrl}"/>
+                    <h:outputText value="#{spotController.selected.spotPicMainUrl}" title="#{bundle.ViewSpotTitle_spotPicMainUrl}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotPicIntroUrl}"/>
+                    <h:outputText value="#{spotController.selected.spotPicIntroUrl}" title="#{bundle.ViewSpotTitle_spotPicIntroUrl}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotPicOtherUrl}"/>
+                    <h:outputText value="#{spotController.selected.spotPicOtherUrl}" title="#{bundle.ViewSpotTitle_spotPicOtherUrl}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotIntroContent}"/>
+                    <h:outputText value="#{spotController.selected.spotIntroContent}" title="#{bundle.ViewSpotTitle_spotIntroContent}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotIntroTitle}"/>
+                    <h:outputText value="#{spotController.selected.spotIntroTitle}" title="#{bundle.ViewSpotTitle_spotIntroTitle}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotEmail}"/>
+                    <h:outputText value="#{spotController.selected.spotEmail}" title="#{bundle.ViewSpotTitle_spotEmail}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotTel}"/>
+                    <h:outputText value="#{spotController.selected.spotTel}" title="#{bundle.ViewSpotTitle_spotTel}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotOpentime}"/>
+                    <h:outputText value="#{spotController.selected.spotOpentime}" title="#{bundle.ViewSpotTitle_spotOpentime}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotTransport}"/>
+                    <h:outputText value="#{spotController.selected.spotTransport}" title="#{bundle.ViewSpotTitle_spotTransport}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotAddr}"/>
+                    <h:outputText value="#{spotController.selected.spotAddr}" title="#{bundle.ViewSpotTitle_spotAddr}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotWebsite}"/>
+                    <h:outputText value="#{spotController.selected.spotWebsite}" title="#{bundle.ViewSpotTitle_spotWebsite}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotMapUrl}"/>
+                    <h:outputText value="#{spotController.selected.spotMapUrl}" title="#{bundle.ViewSpotTitle_spotMapUrl}"/>
+                    <h:outputText value="#{bundle.ViewSpotLabel_spotBelongToCity}"/>
+                    <h:outputText value="#{spotController.selected.spotBelongToCity}" title="#{bundle.ViewSpotTitle_spotBelongToCity}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{spotController.destroyAndView}" value="#{bundle.ViewSpotDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSpotEditLink}"/>
+                <br />
+                <h:commandLink action="#{spotController.prepareCreate}" value="#{bundle.ViewSpotCreateLink}" />
+                <br />
+                <h:commandLink action="#{spotController.prepareList}" value="#{bundle.ViewSpotShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSpotIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

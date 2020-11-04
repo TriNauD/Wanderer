@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login</title>
+        <h:outputStylesheet library="css" name="register.css"/>
+    </h:head>
+    <h:body>
+        <form>
+            <h:commandButton value="&lt;  Back" style="background: none;border: none;" action="index.xhtml"/>
+        </form>
+        <div id="header"/>
+        <div id="loginLeftColumn">
+            <div class="loginBox">
+                <div id="title">
+                    Register
+                </div>
+                <div class="input">
+                    <h:form>
+                        <h:outputText value="username" styleClass="inputTitle"/>
+                        <br></br>
+                        <h:inputText  id="userName"
+                                      styleClass="inputBox"
+                                      value="#{userController.selected.userName}" 
+                                      required="true" 
+                                      requiredMessage="Please Input Your Username." 
+                                      maxlength="10"/>
+                        <h:message for="userName" styleClass="errorMsg"/>
+                        <br></br><br></br><br></br>
+                        <h:outputText value="password" styleClass="inputTitle"/>
+                        <br></br>
+                        <h:inputSecret id="password"
+                                       styleClass="inputBox"
+                                       value="#{userController.selected.userPassword}"                                       
+                                       required="true" 
+                                       requiredMessage="Please Input Your PassWord."
+                                       validator = "#{userController.isRegisterSuccess}"
+                                       maxlength="20"/>
+                        <h:message for="password" styleClass="errorMsg"/>
+                        <br></br><br></br><br></br><br></br>
+                        <h:commandButton value="REGISTER" 
+                                         action="login.xhtml"
+                                         styleClass="loginButton"/>           
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <div id="loginRightColumn">
+            <img id="logo" src="resources/images/icons/travel_logo.png" width="480px" height="427px"/>
+        </div>
+        <div id="footer"/>
+    </h:body>
+</html>
+
+
+

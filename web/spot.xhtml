@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Spot</title>
+        <h:outputStylesheet library="css" name="spot.css"/>
+    </h:head>
+    <h:body>        
+        #{spotController.flushCurrentSpot()}
+        <form>
+            <input type="button" value="&lt;  Back" onclick="JavaScript:history.go(-1)" style="float: left;background: none;border: none;margin-top: 15px;margin-left: 10px;"></input>
+        </form>
+        <center>
+            <div id="top">
+                <img id="logo" src="resources/images/icons/wanderer_icon_black.png" width="220px" hieht="165px"/>
+            </div>
+            <div id="spotCover" style="#{spotController.coverStyleStr}">
+                <h:outputText value="#{spotController.selected.spotName}"/>
+            </div>
+        </center>
+        <h:form>
+            <h:commandButton value="+ Collect" action="#{userCollectSpotController.processCollect}" styleClass="collectButton"/>
+        </h:form>
+        <center>
+            <div id="spotIntroduction">
+                <div id="spotIntroductionPicture">
+                    <img id="SpotIntroductionPicture" src="#{spotController.selected.spotPicIntroUrl}" width="700px" height="481"/>
+                </div>
+                <div id="spotIntroductionText">
+                    <div style="font-size:70px;font-weight: bold;"><h:outputText value="Introduction"/></div>
+                    <div id="middleBlank"></div>
+                    <div style="font-size:50px;font-weight: bold;"><h:outputText value="#{spotController.selected.spotIntroTitle}"/></div>
+                    <div id="middleBlank"></div>
+                    <div style="font-size:30px;font-weight: normal;" word-wrap="break-word">
+                        <h:outputText value="#{spotController.selected.spotIntroContent}"/></div>
+                </div>
+            </div>
+        </center>
+        <center>
+            <div id="spotContact">
+                <div id="leftblank">
+
+                </div>
+                <div id="spotContactTitle">
+                    <div style="font-size:70px"><h:outputText value="Contact Information"/></div>
+                </div>
+                <div id="spotContactText">
+                    <div id="spotContactText11">
+                        <img id="spotContactText1Pacture" src="resources/images/icons/pos.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText12">
+                        <h:outputText value="#{spotController.selected.spotAddr}"/>
+                    </div>
+                    <div id="spotContactText21">
+                        <img id="spotContactText2Pacture" src="resources/images/icons/mail.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText22">
+                        <h:outputText value="#{spotController.selected.spotEmail}"/>
+                    </div>
+                    <div id="spotContactText31">
+                        <img id="spotContactText3Pacture" src="resources/images/icons/tele.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText32">
+                        <h:outputText value="#{spotController.selected.spotTel}"/>
+                    </div>
+                    <div id="spotContactText41">
+                        <img id="spotContactText4Pacture" src="resources/images/icons/web.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText42">
+                        <h:outputText value="#{spotController.selected.spotWebsite}"/>
+                    </div>
+                    <div id="spotContactText51">
+                        <img id="spotContactText4Pacture" src="resources/images/icons/time.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText52">
+                        <h:outputText value="#{spotController.selected.spotOpentime}"/>
+                    </div>
+                    <div id="spotContactText61">
+                        <img id="spotContactText4Pacture" src="resources/images/icons/trans.png" width="35px" height="35px"/>
+                    </div>
+                    <div id="spotContactText62">
+                        <h:outputText value="#{spotController.selected.spotTransport}"/>
+                    </div>
+
+                </div>
+                <div id="spotContactPicture">
+                    <!--<img id="SpotContactPicture" src="resources/images/pics/map.png" width="700px" height="481px"/>-->
+                    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+                    <p:gmap center="﻿#{spotController.selected.spotMapUrl}" zoom="15" type="ROADMAP" style="width:100%;height:400px" />
+                </div>
+            </div>
+        </center>
+        <center>
+            <div id="spotShots">
+                <div id="leftblank"/>
+                <div id="spotShotsTitle">
+                    <div style="font-size:70px"><h:outputText value="Beautiful Shots"/></div>
+                    <!--</div>
+                    <div id="spotShotsLeftPicture">
+                        <img id="SpotContactPicture" src="#{spotController.spotPicOtherUrls[0]}" width="550px" height="377.92"/>
+                    </div>
+                    <div id="spotShotsRightPicture">
+                        <img id="SpotContactPicture" src="#{spotController.spotPicOtherUrls[1]}" width="550px" height="377.92"/>
+                    </div>-->
+                </div>
+                <h:form>
+                    <!--轮播图-->
+                    <p:galleria value="#{galleriaPics.images}" 
+                                var="image" 
+                                panelWidth="1200" 
+                                panelHeight="575" 
+                                frameWidth="150" 
+                                frameHeight="100" 
+                                showCaption="false" 
+                                effect="fade"
+                                effectSpeed="1000"
+                                autoPlay="true" 
+                                transitionInterval="3000">
+                        <!--轮播图内图片及其URL-->
+                        <p:graphicImage value="#{spotController.selected.spotPicOtherUrl}/#{image}" 
+                                        alt="Image Description for #{image}" 
+                                        title="#{image}" 
+                                        styleClass="gallepic"/>
+                    </p:galleria>
+                </h:form>
+            </div>
+        </center>
+    </h:body>
+</html>
+
+
+

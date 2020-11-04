@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCityTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityId}" for="cityId" />
+                    <h:inputText id="cityId" value="#{cityController.selected.cityId}" title="#{bundle.CreateCityTitle_cityId}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityId}"/>
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityName}" for="cityName" />
+                    <h:inputText id="cityName" value="#{cityController.selected.cityName}" title="#{bundle.CreateCityTitle_cityName}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityName}"/>
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityPicMainUrl}" for="cityPicMainUrl" />
+                    <h:inputText id="cityPicMainUrl" value="#{cityController.selected.cityPicMainUrl}" title="#{bundle.CreateCityTitle_cityPicMainUrl}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityPicMainUrl}"/>
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityPicIntroUrl}" for="cityPicIntroUrl" />
+                    <h:inputText id="cityPicIntroUrl" value="#{cityController.selected.cityPicIntroUrl}" title="#{bundle.CreateCityTitle_cityPicIntroUrl}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityPicIntroUrl}"/>
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityPicOtherUrl}" for="cityPicOtherUrl" />
+                    <h:inputText id="cityPicOtherUrl" value="#{cityController.selected.cityPicOtherUrl}" title="#{bundle.CreateCityTitle_cityPicOtherUrl}" />
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityIntroTitle}" for="cityIntroTitle" />
+                    <h:inputText id="cityIntroTitle" value="#{cityController.selected.cityIntroTitle}" title="#{bundle.CreateCityTitle_cityIntroTitle}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityIntroTitle}"/>
+                    <h:outputLabel value="#{bundle.CreateCityLabel_cityIntroContent}" for="cityIntroContent" />
+                    <h:inputTextarea rows="4" cols="30" id="cityIntroContent" value="#{cityController.selected.cityIntroContent}" title="#{bundle.CreateCityTitle_cityIntroContent}" required="true" requiredMessage="#{bundle.CreateCityRequiredMessage_cityIntroContent}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cityController.create}" value="#{bundle.CreateCitySaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{cityController.prepareList}" value="#{bundle.CreateCityShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCityIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

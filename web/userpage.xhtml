@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>User</title> 
+        <!--将外部文件添加到JSF页面-->
+        <h:outputStylesheet library="css" name="userpage.css"/>
+    </h:head>
+    <h:body>
+        <div id="top">
+            <center>
+                <input type="button" value="&lt;  Back" onclick="JavaScript:history.go(-1)" style="float: left;background: none;border: none;margin-top: 15px;margin-left: 10px;"></input>
+                <img id="logo" src="resources/images/icons/wanderer_icon_black.png" width="220px" height="165px"/>
+            </center>
+        </div>
+        <div id="left">
+            <div id="headPicId">
+                <img id="headPic" src="resources/images/pics/headPic.jpg" width="80px" height="80px"/>
+            </div>
+            <div id="userNameId">
+                <h:form>
+                    <h:outputText value="#{userController.selected.userName}" /> 
+                </h:form>
+            </div>
+        </div>
+        <div id="right">
+            <!--设置图片的大小、下方留白-->
+            <img id="scenery01" src="#{userController.spotUrl[0]}" width="700px" height="462px" style="margin-bottom: 40px"/>
+            <img id="scenery02" src="#{userController.spotUrl[1]}" width="700px" height="462px" style="margin-bottom: 40px"/>
+            <img id="scenery03" src="#{userController.spotUrl[2]}" width="700px" height="462px" style="margin-bottom: 40px"/>
+
+            <!--            <div id="sce01">
+                        </div>
+                        <div id="sce02">
+                        </div>
+                        <div id="sce03">
+                        </div>-->
+
+        </div>
+    </h:body>
+</html>
+

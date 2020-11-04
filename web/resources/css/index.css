@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2019-9-3, 15:51:07
+    Author     : 23675
+*/
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/pics/scenery06.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#top{
+    height:180px;
+}
+#logo{
+    position: absolute; 
+    left:50%; 
+    top: 10px; 
+    margin-left: -70px;
+}
+#loginIcon{
+    position: absolute;
+    right:80px;
+    top:10px;
+}
+.loginButton{
+    position: absolute;
+    right:28px;
+    top:10px;
+    border: none;
+    background: none;
+    color: white;
+}
+.userNameButton{
+    position: absolute;
+    left:1450px;
+    top:10px;
+    border: none;
+    background: none;
+    color: white;
+}
+.registerButton{
+    position: absolute;
+    right:100px;
+    top:10px;
+    border: none;
+    background: none;
+    color: white;
+}
+#footer{
+    height: 150px;
+    clear: left;
+}
+#left{
+    width: 120px;
+    height: 450px;
+    float: left;
+    font-family: Century Schoolbook;
+    font-size: 30px;
+}
+#right{
+    width: 800px;
+    height:450px;
+    float: left;
+}
+#title{
+    width: 800px;
+    height: 350px;
+    font-size: 95px;
+    font-family: Century Schoolbook;
+    color: white;
+}
+#searchBox{
+    width: 800px;
+    height: 50px;
+}
+.inputText{
+    width: 300px;
+    height: 30px;
+    opacity: 0.4;
+}
+.searchButton{
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-image: url(images/icons/search_button2.png);   
+    opacity: 0.7;
+}

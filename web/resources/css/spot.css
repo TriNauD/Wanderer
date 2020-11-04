@@ -1,0 +1,226 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2019-9-5, 9:14:46
+    Author     : Wen
+*/
+xhtml,body{
+    width:100%;
+    height:100%;
+}
+#top{
+    width:1500px;
+    height:165px;
+    background-color: #FFFFFF;
+}
+#spotCover{
+    width:1560px;
+    height:765.69px;
+    background-image: url(images/pics/YuGarden.jpg);
+    background-position: center center;
+    /*背景图居中*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*背景图填充*/
+    display: table-cell;
+    vertical-align:middle;
+    /*字体垂直居中*/
+    text-align:center;
+    /*字体水平居中*/
+    font-size: 220px;
+    font-family: Century Schoolbook;
+    font-weight: bold;
+    /*字体大小*/
+    color:#FFFFFF;
+    /*字体颜色*/
+}
+#spotIntroduction{
+    width:1500px;
+    height:850px;
+    background-color: #FFFFFF;
+}
+#spotIntroductionPicture{
+    width:750px;
+    height:850px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#spotIntroductionText{
+    width:750px;
+    height:850px;
+    text-align: left;
+    font-family: Century Schoolbook;
+    font-weight:normal;
+    display: table-cell;
+    vertical-align:middle;
+    background-color: #FFFFFF;
+}
+
+#spotContact{
+    width:1500px;
+    height:850px;
+    background-color: #FFFFFF;
+}
+#leftblank{
+    width:100px;
+    height:200px;
+    float: left;
+}
+#middleBlank{
+    width:10px;
+    height:50px;
+}
+#spotContactTitle{
+    width:1400px;
+    height:200px;
+    text-align: left;
+    font-family: Century Schoolbook;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align:middle;
+    background-color: #FFFFFF;
+}
+#spotContactPicture{
+    width:750px;
+    height:650px;
+    float: left;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+#spotContactText{
+    width:750px;
+    height:650px;
+    float: left;
+    font-size: 25px;
+    font-family: Century Schoolbook;
+    background-color: #FFFFFF;
+}
+#spotContactText11{
+    width:200px;
+    height:90px;
+    float: left;
+    font-family: Century Schoolbook;
+    text-align: right; 
+}
+#spotContactText12{
+    width:550px;
+    height:90px;
+    float: left;
+    font-family: Century Schoolbook;
+    text-align:left;
+}
+#spotContactText21{
+    width:200px;
+    height:90px;
+    float: left;
+    font-family: Century Schoolbook;
+    text-align: right;
+}
+#spotContactText22{
+    width:550px;
+    height:90px;
+    float: left;
+    text-align:left;
+    font-family: Century Schoolbook;
+}
+#spotContactText31{
+    width:200px;
+    height:90px;
+    float: left;
+    text-align: right;
+    font-family: Century Schoolbook;
+}
+#spotContactText32{
+    width:550px;
+    height:90px;
+    float: left;
+    text-align:left;
+    font-family: Century Schoolbook;
+}
+#spotContactText41{
+    width:200px;
+    height:90px;
+    float: left;
+    text-align: right;
+    font-family: Century Schoolbook;
+}
+#spotContactText42{
+    width:550px;
+    height:90px;
+    float: left;
+    text-align:left;
+    font-family: Century Schoolbook;
+}
+#spotContactText51{
+    width:200px;
+    height:90px;
+    float: left;
+    text-align: right;
+    font-family: Century Schoolbook;
+}
+#spotContactText52{
+    width:550px;
+    height:90px;
+    float: left;
+    text-align:left;
+    font-family: Century Schoolbook;
+}
+#spotContactText61{
+    width:200px;
+    height:90px;
+    float: left;
+    text-align: right;
+    font-family: Century Schoolbook;
+}
+#spotContactText62{
+    width:550px;
+    height:90px;
+    float: left;
+    text-align:left;
+    font-family: Century Schoolbook;
+}
+
+#spotShots{
+    width:1500px;
+    height:850px;
+    background-color: #FFFFFF;
+}
+#spotShotsTitle{
+    width:1400px;
+    height:200px;
+    text-align: left;
+    font-family: Century Schoolbook;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align:middle;
+    background-color: #FFFFFF;
+}
+#spotShotsLeftPicture{
+    width:750px;
+    height:650px;
+    float: left;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+#spotShotsRightPicture{
+    width:750px;
+    height:650px;
+    float: left;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+.gallepic{
+    width: 1200px;
+    height: 680px;
+}
+.collectButton{
+    background: none;
+    border: none;
+}
